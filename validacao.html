@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script>
+
+        function validacaoForm(){
+            var nome = document.getElementById("nome").value;
+            var endereco  = document.getElementById("endereco").value;
+            var bairro = document.getElementById("bairro").value;
+            var cep = document.getElementById("cep").value;
+            var cidade = document.getElementById("cidade").value;
+            var estado = document.getElementById("estado").value;
+            var telFixo = document.getElementById("telFixo").value;
+            var celular = document.getElementById("celular").value;
+            var rg = document.getElementById("rg").value;
+            var cpf = document.getElementById("cpf").value;
+
+            if(nome != "" && nome.length > 2 && isNaN(nome)){
+                console.log("Nome "+nome+" está validado!");
+            } else {
+                console.log("Nome inválido");
+            }
+
+            if(endereco != "" && endereco.length > 2){
+
+            } else {
+                console.log("Endereco inválido");
+            }
+
+            if(bairro != ""){
+
+            } else{
+                console.log("bairro inválido");
+            }
+
+            var cepT = cep.length;
+            if(cep != "" && cepT == 7 && isNaN(cep) == false){
+                console.log("CEP "+cep+" está validado!");
+            } else{
+                console.log("CEP inválido");
+            }
+
+            if(cidade != "" && cidade.length > 2){
+
+            } else{
+                console.log("Cidade inválida");
+            }
+
+            if(estado != "" && estado.length > 2){
+
+            } else{
+                console.log("Estado inválido!");
+            }
+
+            if(telFixo != "" && telFixo.length > 9){
+
+            } else{
+                console.log("Telefone Fixo inválido");
+            }
+
+            if(celular != "" && celular.length > 8){
+
+            } else{
+                console.log("Celular inválido");
+            }
+
+            if(rg != "" && rg.length == 6){
+
+            } else{
+                console.log("RG inválido");
+            }
+
+            if(cpf != "" && cpf.length > 2){
+
+            } else{
+                console.log("CPF inválido");
+            }
+
+        }
+
+
+
+    </script>
+
+</head>
+<body style="margin-left: 2%; margin-right: 3%; margin-top: 1.5%; margin-bottom: 2%;">
+    <div style=" justify-content: left; flex-direction: row; width: 100%; align-items: left;">
+        <form>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" class="form-control" id="nome"  placeholder="Digite seu nome"  maxlength="80"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Endereço</label>
+                <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="digite seu bairro"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">CEP</label>
+                <input type="text" class="form-control" id="cep" placeholder="digite seu CEP"  maxlength="7"><br>
+            </div>
+            
+            <div class="form-group">
+               <label for="exampleInputEmail1">Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="digite sua cidade"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Estado</label>
+                <input type="text" class="form-control" id="estado" placeholder="digite seu estado"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone Fixo</label>
+                <input type="text" class="form-control" id="telFixo" placeholder="digite seu telefone fixo"  maxlength="11"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Celular</label>
+                <input type="text" class="form-control" id="celular" placeholder="digite seu celular"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">RG</label>
+                <input type="text" class="form-control" id="rg" placeholder="digite seu RG"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="digite seu cpf" maxlength="14"><br>
+            </div>
+
+            <input type="button" name="btnCadastrar" id="btnCadastrar" class="btn btn-primary" onclick="validacaoForm()" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
