@@ -27,56 +27,119 @@
                 console.log("Nome inválido");
             }
 
+            //Validação do endereco
             if(endereco != "" && endereco.length > 2){
-
+                console.log("Endereco "+endereco+" está validado!");
             } else {
                 console.log("Endereco inválido");
             }
 
+            //Validação do bairro
             if(bairro != ""){
-
+                console.log("Bairro "+bairro+" está validado!");
             } else{
                 console.log("bairro inválido");
             }
 
+            //Validação do CEP
             var cepT = cep.length;
-            if(cep != "" && cepT == 7 && isNaN(cep) == false){
+            if(cep != "" && cepT == 8 && isNaN(cep) == false){
                 console.log("CEP "+cep+" está validado!");
             } else{
                 console.log("CEP inválido");
             }
 
+            //Validação da cidade
             if(cidade != "" && cidade.length > 2){
 
             } else{
                 console.log("Cidade inválida");
             }
 
+            //Validação do estado
             if(estado != "" && estado.length > 2){
 
             } else{
                 console.log("Estado inválido!");
             }
 
-            if(telFixo != "" && telFixo.length > 9){
-
+            //Validação do telefone
+            if(telFixo != "" && telFixo.length == 15){
+                console.log("Telefone fixo "+ telFixo +" Validado")
             } else{
                 console.log("Telefone Fixo inválido");
             }
 
-            if(celular != "" && celular.length > 8){
-
+            //Validação do celular
+            if(celular != "" && celular.length == 14){
+                console.log("Celular "+ celular +" Validado")        
             } else{
                 console.log("Celular inválido");
             }
 
-            if(rg != "" && rg.length == 6){
-
+            //Validação do RG
+            if(rg != "" && rg.length == 12){
+                console.log("RG "+ rg +" Validado") 
             } else{
                 console.log("RG inválido");
             }
 
-            if(cpf != "" && cpf.length > 2){
+            //Validação do CPF
+            if(cpf != "" && cpf.length == 14){
+                cpf2 = cpf.replace(/\.|-/g,"");
+
+                somaV = 0
+                somaV += cpf2[0] * 10;
+                somaV += cpf2[1] * 9;
+                somaV += cpf2[2] * 8;
+                somaV += cpf2[3] * 7;
+                somaV += cpf2[4] * 6;
+                somaV += cpf2[5] * 5;
+                somaV += cpf2[6] * 4;
+                somaV += cpf2[7] * 3;
+                somaV += cpf2[8] * 2;
+
+                somaV = (somaV * 10) %11;
+
+                if(somaV == 10 || somaV == 11){
+                    somaV = 0;
+                }
+
+                if(somaV != cpf2[9]){
+                    valid1 = false;
+                } else {
+                    valid1 = true;
+                }
+
+                somaV2 = 0
+                somaV2 += cpf2[0] * 11;
+                somaV2 += cpf2[1] * 10;
+                somaV2 += cpf2[2] * 9;
+                somaV2 += cpf2[3] * 8;
+                somaV2 += cpf2[4] * 7;
+                somaV2 += cpf2[5] * 6;
+                somaV2 += cpf2[6] * 5;
+                somaV2 += cpf2[7] * 4;
+                somaV2 += cpf2[8] * 3;
+                somaV2 += cpf2[9] * 2;
+
+                somaV2 = (somaV2 * 10) %11;
+
+                if(somaV2 == 10 || somaV2 == 11){
+                    somaV2 = 0;
+                }
+
+                if(somaV2 != cpf2[10]){
+                    valid2 = false;
+                } else {
+                    valid2 = true;
+                }
+
+                if(valid1 == true && valid2 == true){
+                    console.log("CPF "+ cpf +" é válido!")
+                } else{
+                    console.log("CPF inválido");
+                }
 
             } else{
                 console.log("CPF inválido");
@@ -109,7 +172,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="digite seu CEP"  maxlength="7"><br>
+                <input type="text" class="form-control" id="cep" placeholder="digite seu CEP"  maxlength="8"><br>
             </div>
             
             <div class="form-group">
@@ -124,12 +187,12 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Telefone Fixo</label>
-                <input type="text" class="form-control" id="telFixo" placeholder="digite seu telefone fixo"  maxlength="11"><br>
+                <input type="text" class="form-control" id="telFixo" placeholder="digite seu telefone fixo: (00)00000-00000"  maxlength="15"><br>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Celular</label>
-                <input type="text" class="form-control" id="celular" placeholder="digite seu celular"><br>
+                <input type="text" class="form-control" id="celular" placeholder="digite seu celular: (00)00000-0000" maxlength="14"><br>
             </div>
 
             <div class="form-group">
